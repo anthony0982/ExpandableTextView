@@ -142,7 +142,7 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
 
         mCollapsed = !mCollapsed;
         mStateTv.setText(mCollapsed ? mExpandString : mCollapsedString);
-        mStateTv.setCompoundDrawablesWithIntrinsicBounds(mCollapsed ? mExpandDrawable : mCollapseDrawable, null, null, null);
+        mStateTv.setCompoundDrawablesWithIntrinsicBounds(null, null, mCollapsed ? mExpandDrawable : mCollapseDrawable, null);
 
         if (mCollapsedStatus != null) {
             mCollapsedStatus.put(mPosition, mCollapsed);
@@ -262,7 +262,7 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
         clearAnimation();
         mCollapsed = isCollapsed;
         mStateTv.setText(mCollapsed ? mExpandString : mCollapsedString);
-        mStateTv.setCompoundDrawablesWithIntrinsicBounds(mCollapsed ? mExpandDrawable : mCollapseDrawable, null, null, null);
+        mStateTv.setCompoundDrawablesWithIntrinsicBounds(null, null, mCollapsed ? mExpandDrawable : mCollapseDrawable, null);
         setText(text);
         getLayoutParams().height = ViewGroup.LayoutParams.WRAP_CONTENT;
         requestLayout();
@@ -336,7 +336,7 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
         mStateTv.setLayoutParams(params);
         mStateTv.setText(mCollapsed ? mExpandString : mCollapsedString);
         mStateTv.setTextColor(mStateTextColor);
-        mStateTv.setCompoundDrawablesWithIntrinsicBounds(mCollapsed ? mExpandDrawable : mCollapseDrawable, null, null, null);
+        mStateTv.setCompoundDrawablesWithIntrinsicBounds(null, null, mCollapsed ? mExpandDrawable : mCollapseDrawable, null);
         mStateTv.setCompoundDrawablePadding(10);
         mStateTv.setOnClickListener(this);
     }
