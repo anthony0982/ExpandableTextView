@@ -1,1 +1,1 @@
-include ':sample', ':expandabletextview'
+include ':expandabletextview'
